@@ -8,6 +8,5 @@ import api from '@/api'
 
 const peopleApi = api('people')
 
-const peoplesRef = ref()
-peoplesRef.value = await peopleApi.getPeoples()
+const peoplesRef = await peopleApi.getPeoples()
 </script>

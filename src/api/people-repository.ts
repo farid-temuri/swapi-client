@@ -29,5 +29,10 @@ export default {
 		const { $axios } = useNuxtApp()
 		const res = await $axios.get<PeopleListEntity>( '/people/' )
 		return res.data
+	},
+	getPersonById: async(id:number) => {
+		const { $axios } = useNuxtApp()
+		const res = await $axios.get<PeopleEntity>( `/people/${id}` )
+		return res.data
 	}
 }
