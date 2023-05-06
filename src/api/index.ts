@@ -1,7 +1,16 @@
 import peopleRepository from "./people-repository"
+import filmsRepository from "./films-repository"
+
+export interface ListEntity<T> {
+	count: number,
+	next: string | null;
+	previous: string | null;
+	results: T
+}
 
 const apiDictionary = {
-	people: peopleRepository
+	people: peopleRepository,
+	films: filmsRepository
 } as const 
 
 const apiFactory = (key: keyof typeof apiDictionary) => {
