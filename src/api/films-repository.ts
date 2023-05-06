@@ -1,6 +1,4 @@
-import { ListEntity } from "."
-
-type ISOString = string
+import { ISOString, ListEntity } from "."
 
 interface FilmEntity {
 	title: string
@@ -22,12 +20,12 @@ interface FilmEntity {
 interface FilmListEntity extends ListEntity<FilmEntity> {}
 
 export default {
-	getPeoples:async  () => {
+	getFilm:async  () => {
 		const { $axios } = useNuxtApp()
 		const res = await $axios.get<FilmListEntity>( '/films/' )
 		return res.data
 	},
-	getPersonById: async(id:number) => {
+	getFilmById: async(id:number) => {
 		const { $axios } = useNuxtApp()
 		const res = await $axios.get<FilmEntity>( `/films/${id}` )
 		return res.data

@@ -8,6 +8,8 @@ export interface ListEntity<T> {
 	results: T
 }
 
+export type ISOString = string
+
 const apiDictionary = {
 	people: peopleRepository,
 	films: filmsRepository

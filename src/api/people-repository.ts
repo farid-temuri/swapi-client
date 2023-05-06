@@ -1,3 +1,5 @@
+import { ListEntity } from "."
+
 interface PeopleEntity {
 	name: string
 	birth_year: string
@@ -17,12 +19,7 @@ interface PeopleEntity {
 	edited:string
 }
 
-interface PeopleListEntity {
-	count: number,
-	next: string | null;
-	previous: string | null;
-	results: PeopleEntity[]
-}
+interface PeopleListEntity extends ListEntity<PeopleEntity> {}
 
 export default {
 	getPeoples:async  () => {
