@@ -22,9 +22,12 @@ export interface PeopleEntity {
 export interface PeopleListEntity extends ListEntity<PeopleEntity> {}
 
 export default {
-	getPeople:async  () => {
+	getPeople:async  (page?:number) => {
 		const { $axios } = useNuxtApp()
-		const res = await $axios.get<PeopleListEntity>( '/people/' )
+		console.log(`${page ? '?page='+page:''}`);
+		
+		const res = await $axios.get<PeopleListEntity>( `/people${ page ? '?page=' + page : '' }` )
+
 		return res.data
 	},
 	getPersonById: async(id:number) => {

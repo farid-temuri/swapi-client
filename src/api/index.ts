@@ -8,10 +8,11 @@ import vehiclesRepository from "./vehicles-repository"
 import { TypeofObjectValues } from "~~/types";
 
 export interface ListEntity<T> {
-	count: number,
+	page: number;
+	count: number;
 	next: string | null;
 	previous: string | null;
-	results: T
+	results: T[]
 }
 
 export type ISOString = string
