@@ -1,6 +1,6 @@
 import { ListEntity } from "."
 
-interface PeopleEntity {
+export interface PeopleEntity {
 	name: string
 	birth_year: string
 	eye_color: string
@@ -19,10 +19,10 @@ interface PeopleEntity {
 	edited:string
 }
 
-interface PeopleListEntity extends ListEntity<PeopleEntity> {}
+export interface PeopleListEntity extends ListEntity<PeopleEntity> {}
 
 export default {
-	getPeoples:async  () => {
+	getPeople:async  () => {
 		const { $axios } = useNuxtApp()
 		const res = await $axios.get<PeopleListEntity>( '/people/' )
 		return res.data

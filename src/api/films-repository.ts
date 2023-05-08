@@ -20,7 +20,7 @@ interface FilmEntity {
 interface FilmListEntity extends ListEntity<FilmEntity> {}
 
 export default {
-	getFilm:async  () => {
+	getFilms:async  () => {
 		const { $axios } = useNuxtApp()
 		const res = await $axios.get<FilmListEntity>( '/films/' )
 		return res.data

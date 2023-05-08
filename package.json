@@ -13,7 +13,9 @@
     "nuxt": "^3.4.3"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.4.9",
     "axios": "^1.4.0",
-    "nuxt-3-vuetify": "^1.1.1"
+    "nuxt-3-vuetify": "^1.1.1",
+    "pinia": "^2.0.35"
   }
 }
