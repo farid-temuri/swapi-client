@@ -10,7 +10,8 @@ export default defineNuxtConfig({
 	],
 	vuetify: {
     scssSettingsSrc: 'settings.scss',
-    vuetifyOptions: {
+		vuetifyOptions: {
+			ssr:true,
       blueprint: md3,
     }
 	},

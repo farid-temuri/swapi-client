@@ -24,8 +24,6 @@ export interface PeopleListEntity extends ListEntity<PeopleEntity> {}
 export default {
 	getPeople:async  (page?:number) => {
 		const { $axios } = useNuxtApp()
-		console.log(`${page ? '?page='+page:''}`);
-		
 		const res = await $axios.get<PeopleListEntity>( `/people${ page ? '?page=' + page : '' }` )
 
 		return res.data

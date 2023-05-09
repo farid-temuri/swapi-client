@@ -2,27 +2,24 @@
   <v-app id="inspire">
     <v-app-bar
       class="px-3"
-      color="white"
+      color="primary"
       flat
       density="compact"
     >
       <v-spacer></v-spacer>
 
-      <v-tabs
+      <VTabs
         centered
-        color="grey-darken-2"
-      >
-        <v-tab
+        color="white"
+      > 
+        <VTab
           v-for="link in links"
-          :key="link.to"
-					:to="link.to"
-					@click="$router.push({
-						name:link.to
-						})"
+          :key="link.pathName.name"
+					:to="link.pathName"
         >
 				{{ link.name }}
-        </v-tab>
-      </v-tabs>
+        </VTab>
+      </VTabs>
       <v-spacer></v-spacer>
 
     </v-app-bar>
@@ -44,7 +41,7 @@
               min-height="70vh"
               rounded="lg"
             >
-              <slot></slot>
+<slot></slot>
             </v-sheet>
           </v-col>
 
@@ -63,11 +60,11 @@
 const links = ref( [
 	{
 		name: 'Main',
-		to: 'index'
+		pathName:{ name:'index'}
 	},
 	{
 		name: 'People',
-		to: 'people'
+		pathName: {name:'people'}
 	}
 ] )
 
